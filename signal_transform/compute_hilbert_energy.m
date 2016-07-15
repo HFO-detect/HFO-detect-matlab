@@ -8,5 +8,4 @@ function [hilbert_energy]=compute_hilbert_energy(signal)
 % ----------
     % signal - numpy array
 %%
-sig=str2num(int2str(signal));
-hilbert_energy = abs(hilbert(detrend(sig,'constant'))).^2
+hilbert_energy = abs(hilbert(detrend(signal)).^2);

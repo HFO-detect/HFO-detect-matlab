@@ -12,4 +12,4 @@ function [ths_value]=th_turkey(signal,ths)
 % -----------
 %     ths_value - value of the threshold
 %%
-ths_value = (signal*0.75) + ((ths/100)*(signal*0.75)-(signal*0.25));
+ths_value = prctile(signal,75) + ((ths*100)*prctile(signal,75)-prctile(signal,25));

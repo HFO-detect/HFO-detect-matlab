@@ -12,4 +12,4 @@ function [ths_value]=th_percentile(signal,ths)
 % -----------
 %     ths_value - value of the threshold
 %%
-ths_value = signal*(ths/100);
+ths_value = prctile(signal,ths*100);

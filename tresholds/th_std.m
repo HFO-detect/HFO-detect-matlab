@@ -13,5 +13,4 @@ function [ths_value]=th_std(signal,ths)
 % ----------
     % ths_value - value of threshold
 %%
-signal=double(signal);
 ths_value=mean(signal)+ths*std(signal);

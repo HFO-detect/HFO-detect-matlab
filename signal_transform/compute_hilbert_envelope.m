@@ -9,5 +9,4 @@ function [hilbert_envelope]=compute_hilbert_envelope(signal)
 % ----------
 %   signal - numpy array
 %%
-signal=double(signal);
-hilbert_envelope = abs(hilbert(detrend(signal,'constant')));
+hilbert_envelope = abs(hilbert(detrend(signal)));
