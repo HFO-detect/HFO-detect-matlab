@@ -1,26 +1,23 @@
-function [out_df]= create_output_df(fields,varargin)% fields=[],dtypes=None
+function [out_df]= create_output_df(varargin)
 %%
 %  Function to create a structure depending on the algorithm needs. 
 %  Fields: event_start,event_stop preset.
 %     
 % Parameters:
 % -----------
-    % fields(list) - additional fields for the dataframe\n
-    % dtypes(dict) - dictionary with dtypes for specified fields (optional)\n
+    % fields(struct) - optional fields struct e.g. - struct('frequency','int64')
 %     
 % Returns:
 % --------
     % dataframe - pandas dataframe for deteciton insertion\n
 %%    
-if length(varargin)>=1
+if length(varargin)==1
      dtypes = varargin{1};
 else dtypes = [];
 end
 
-dtypes = struct('channel_name','str','baf','double');
-
 % Preset dtypes
-dtype_dict = struct('event_start','int64','event_stop','int64');
+dtype_dict = struct('channel_name','str','event_start','int64','event_stop','int64');
                   
 if isempty(dtypes) == 1
     dtypes_fields = fieldnames(dtypes);
